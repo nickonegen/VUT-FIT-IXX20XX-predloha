@@ -1,6 +1,7 @@
 ###############################################################################
 #
 # IXX-Projekt 1 Makefile
+# (edit this file to fit the project)
 #
 # Usage:
 #   * `make` or `make all` to build the project (default)
@@ -19,8 +20,10 @@ CPP                    = g++
 LATEX			   = pdftex
 CFLAGS                 = -std=c99 -Wall -Wextra -Werror -pedantic
 CPPFLAGS               = -std=c++20 -Wall -Wextra -Werror -pedantic
-EXTRA_CXFLAGS           = -fdata-sections -ffunction-sections -O3 -g
-# ...
+EXTRA_CXFLAGS          = -fdata-sections -ffunction-sections -O3 -g
+# ...                   = ...
+LINT_FLAGS             = --format-style=file --fix \
+				-checks="bugprone-*,google-*,performance-*,readability-*"
 RM 			        = rm -f
 
 SRCS                   = $(wildcard *.c)
@@ -61,3 +64,6 @@ format:
 	clang-format -i *.c *.h
 	clang-format -i *.cpp *.hpp
 	@echo "Formatted source files!"
+
+lint:
+	clang-tidy ${SRCS} ${LINT_FLAGS} -- ${CFLAGS}
