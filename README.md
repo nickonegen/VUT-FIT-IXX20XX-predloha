@@ -1,20 +1,20 @@
 # IXX PREDLOHA, FIT VUT 20XX #
 
-*Prvý projekt (predloha projektového repozitára) z predmetu OZNUK Simulátor (IXX), ntý semester bakalárskeho štúdia BIT na FIT VUT/BUT, ak.rok 20XX/20XX)*
+*Ntý projekt (názov projektu sem) z predmetu Celý názov predmetu (IXX), ntý semester bakalárskeho štúdia BIT na FIT VUT/BUT, ak.rok 20XX/20XX)*
 
 🔒 **Aktívny súkromný repozitár — nezverejňovať!**
 <!-- 🗄️ **Súkromný archivovaný repozitár!** -->
 <!-- ⚠️ **Zverejnené pre archívne účely — nekopírujte, nula by Vás mrzela. Za nič také nenesiem žiadnu zodpovednosť!** Všetky odovzdané projekty prechádzajú kontrolou plagiátorstva, pri ktorej sa porovnávajú aj s dávnejšie odovzdanými riešeniami. -->
 <br />
 
+<!-- Ak projekt má viac častí: "Celkové hodnotenie:" -->
 Hodnotenie: ?? / ??<br />（?）
 
-Zadanie: [ZADANI.md](ZADANI.md), originál [MOODLE/STUDIS/GitFIT](xxxxxx)
+Zadanie: [ZADANI.md](ZADANI.md), originál [WIS WIKI/MOODLE/StudIS PDF/GitFIT/...](https://www.vut.cz/)
 
-<!-- AK projekt nemá viac častí: odstrániť čiaru -->
+<!-- Ak projekt nemá viac častí: odstrániť čiaru a ## nadpis -->
 ----------------------------------------------
 
-<!-- AK projekt nemá viac častí: odstrániť nadpis -->
 ## Časť 1 (zadanie prvé) ##
 
 Hodnotenie: ?? / ??<br />（?）
@@ -25,12 +25,12 @@ Hodnotenie: ?? / ??<br />（?）
 - [ ] ⏰ 20XX-XX-XX **Registrácia**
 - [ ] ⏰ 20XX-XX-XX **Deadline**
 
-<!-- Voliteľné -->
+<!-- Môže-nemusí byť -->
 ### Môže sa hodiť ###
 
 - [Pár užitočných linkov](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository)
-- [z internetu](https://www.geeksforgeeks.org/how-to-learn-programming/)
-- [alebo Discordu](https://cdn.discordapp.com/attachments/929356797981126726/1075326352414224494/20230214_141226.jpg)
+- [Z internetu](https://www.geeksforgeeks.org/how-to-learn-programming/)
+- [Alebo Discordu](https://cdn.discordapp.com/attachments/929356797981126726/1075326352414224494/20230214_141226.jpg)
 
 ----------------------------------------------
 
