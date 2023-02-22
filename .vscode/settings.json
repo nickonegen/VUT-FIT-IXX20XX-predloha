@@ -1,0 +1,8 @@
+{
+	"deepscan.enable": true,
+	"editor.tabSize": 5,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"telemetry.enableTelemetry": false,
+	"conventionalCommits.scopes": []
+}
