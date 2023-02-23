@@ -24,7 +24,7 @@ CFLAGS                 = -std=c99
 CPPFLAGS               = -std=c++20
 EXTRA_CXFLAGS          = -Wall -Wextra -Werror -pedantic \
                     -fdata-sections -ffunction-sections
-RELEASE_CXFLAGS        = -DNDEBUG -O2 -flto -march=native
+RELEASE_CXFLAGS        = -DNDEBUG -O2 -march=native
 DEBUG_CXFLAGS          = -g -Og -fsanitize=undefined
 # ...                  = ...
 LINT_FLAGS             = --format-style=file --fix \
