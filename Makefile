@@ -17,21 +17,41 @@
 TARGET                 = ixx-projekt
 ZIPNAME                = xlogin00.zip
 
-CC                     = gcc
-CPP                    = g++
-LATEX                  = pdftex
-CFLAGS                 = -std=c99
-CPPFLAGS               = -std=c++20
-EXTRA_CXFLAGS          = -Wall -Wextra -Werror -pedantic \
-                    -fdata-sections -ffunction-sections
-RELEASE_CXFLAGS        = -DNDEBUG -O2 -march=native
-DEBUG_CXFLAGS          = -g -Og -fsanitize=undefined
-# ...                  = ...
+##### Example: C #####
+
+CC 			        = gcc
+CFLAGS 		        = -std=c99
+EXTRA_CFLAGS 	        = -Wall -Wextra -Werror -pedantic \
+				-fdata-sections -ffunction-sections
+RELEASE_CFLAGS         = -DNDEBUG -O2 -march=native
+DEBUG_CFLAGS 	        = -g -Og -fsanitize=undefined
 LINT_FLAGS             = --format-style=file --fix \
-                    -checks="bugprone-*,google-*,performance-*,readability-*"
+	-checks="bugprone-*,google-*,performance-*,readability-*"
+RM 		            = rm -f
+
+SRCS 		        = $(wildcard *.c)
+
+##### Example: C++ #####
+
+CPP                    = g++
+CPPFLAGS               = -std=c++20
+EXTRA_CPPFLAGS         = -Wall -Wextra -Werror -pedantic \
+				-fdata-sections -ffunction-sections
+RELEASE_CPPFLAGS       = -DNDEBUG -O2 -march=native
+DEBUG_CPPFLAGS         = -g -Og -fsanitize=undefined
+LINT_FLAGS             = --format-style=file --fix \
+	-checks="bugprone-*,google-*,performance-*,readability-*"
 RM                     = rm -f
 
 SRCS                   = $(wildcard *.cpp)
+
+##### Example: LaTeX #####
+
+LATEX                  = pdftex
+DVIPS                  = dvips -t a4
+PS2PDF                 = ps2pdf
+
+SRCS                   = $(wildcard *.tex)
 
 ###############################################################################
 
@@ -46,7 +66,15 @@ debug: EXTRA_CXFLAGS += ${DEBUG_CXFLAGS}
 debug: ${TARGET}
 
 ${TARGET}: ${SRCS}
+	@##### C #####
+	${CC} ${CFLAGS} ${EXTRA_CFLAGS} ${SRCS} -o ${TARGET}
+	@#### C++ ####
 	${CPP} ${CPPFLAGS} ${EXTRA_CXFLAGS} ${SRCS} -o ${TARGET}
+	@### LaTeX ###
+	${LATEX} ${SRCS}
+	${DVIPS} ${SRCS}
+	${PS2PDF} ${SRCS}
+	@#############
 	@echo "projcpp compiled!"
 	@echo "Run with: ./projcpp -s omething"
 
@@ -68,7 +96,7 @@ clean:
 	${RM} ${TARGET}
 
 zip:
-	zip -q -r ${ZIPNAME}.zip *.cpp *.hpp Makefile
+	zip -q -r ${ZIPNAME}.zip ${SRCS} Makefile
 
 format:
 	clang-format -i *.cpp *.hpp
